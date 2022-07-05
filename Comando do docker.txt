@@ -1,9 +1,0 @@
-- docker ps: lista os containers que estão rodando;
-- docker ps -a: lista todos os containers, tanto os que estão rodando quanto os que não estão;
-- docker rm (id do container): remove um container;
-- docker-compose start (id do container): inicia um container;
-- docker-compose stop (id do container): para um container;
-- docker stop: para o container;
-- docker-compose down: remove o container com os serviços criados;
-- docker-compose up: cria um container;
-- docker logs (nome da aplicação): mostra os logs da aplicação.

@@ -1,12 +1,18 @@
+import { inject, injectable } from "tsyringe";
+
 import { ICategoriesRepository } from "../../repositories/ICategoriesRepository";
 
 interface IRquest {
   name: string;
   description: string;
 }
-
+// A classe agora receberá a instância CategoriesRepository automaticamente através do tsyringe.
+@injectable()
 class CreateCategoryUseCase {
-  constructor(private categoriesRepository: ICategoriesRepository) {}
+  constructor(
+    @inject("CategoriesRepository")
+    private categoriesRepository: ICategoriesRepository
+  ) {}
 
   async execute({ name, description }: IRquest): Promise<void> {
     const categoryAlreadyExists = await this.categoriesRepository.findByName(
